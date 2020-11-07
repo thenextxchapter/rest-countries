@@ -1,0 +1,148 @@
+@import "_base";
+
+.form {
+  width: 65%;
+  display: flex;
+  padding: 5rem;
+  align-content: center;
+  justify-content: space-between;
+  flex: 1;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  position: relative;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 7px 3px rgba(0, 0, 0, 0.1);
+
+  &__dark {
+    background-color: $dark-blue;
+  }
+
+  &__heading {
+    margin-bottom: 5rem;
+    font-size: 3rem;
+  }
+
+  &__group {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__control {
+    border: 1px solid transparent;
+    font-weight: 400;
+    line-height: 24px;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 16px;
+    outline: none;
+    border-radius: 8px;
+    appearance: none;
+    color: #000;
+    background-color: #f3f3f4;
+
+    &__dark {
+      background-color: $hover-blue;
+      color: #fff;
+
+      &::placeholder {
+        color: #fff;
+      }
+
+      &:hover,
+      :focus {
+        background-color: hsl(202, 16%, 36%) !important;
+        border-color: rgba(0, 0, 0, 0.1) !important;
+        //   box-shadow: 0 0 0 4px rgba(234, 76, 137, 0.1);
+        box-shadow: 0 0 0 4px rgba(133, 133, 133, 0.2) !important;
+      }
+    }
+
+    &:hover,
+    :focus {
+      background-color: #fff;
+      border-color: rgba(0, 0, 0, 0.1);
+      //   box-shadow: 0 0 0 4px rgba(234, 76, 137, 0.1);
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    margin-top: 2.2rem;
+    padding: 10px 16px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: #f3f3f4;
+    background: rgba(0, 0, 0, 0.9);
+    transition: all 200ms ease;
+    border-radius: 8px;
+    appearance: none;
+    position: relative;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    height: 40px;
+    text-align: center;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    &__dark {
+      //   background: rgb(81, 100, 114);
+      background: rgb(27, 38, 44);
+      color: #fff;
+
+      &:hover {
+        background: rgba(27, 38, 44, 0.6);
+      }
+    }
+  }
+
+  &__link {
+    text-align: center;
+    color: rgba(13, 12, 34, 0.9);
+    margin-top: 2rem;
+
+    &__dark {
+      color: #fff;
+    }
+  }
+}
+
+.small__text {
+  margin-top: 0.5rem;
+  color: red;
+  font-weight: 600;
+}
+
+.error {
+  background-color: #fff !important;
+  border-color: rgba(255, 0, 0, 0.1) !important;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.5) !important;
+
+  &:hover,
+  :focus,
+  :active {
+    background-color: #fff !important;
+    border-color: rgba(255, 0, 0, 0.1) !important;
+    box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.5) !important;
+  }
+}

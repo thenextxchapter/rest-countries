@@ -1,0 +1,71 @@
+$dark-blue: hsl(209, 23%, 22%);
+$very-dark-blue-bg: hsl(207, 26%, 17%);
+$hover-blue: hsl(203, 19%, 30%);
+$very-dark-blue-text: hsl(200, 15%, 8%);
+$dark-gray: hsl(0, 0%, 52%);
+$very-light-gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; //1200px
+$bp-large: 62.5em; //1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px
+
+// - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+// - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+// - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+// - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 40%;
+  }
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+.container {
+  min-height: 100vh;
+
+  @media only screen and (min-width: $bp-medium) {
+    min-height: 125vh;
+  }
+}
+
+.body__dark {
+  background-color: $very-dark-blue-bg;
+  color: $white;
+  // min-height: 130vh;
+}
+
+.hide {
+  display: none;
+}
+
+// @media (prefers-color-scheme: light) {
+//   body {
+//     background-color: white;
+//     color: black;
+//   }
+// }

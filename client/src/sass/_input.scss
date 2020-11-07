@@ -1,0 +1,168 @@
+@import "_base";
+
+.input {
+  display: flex;
+  padding: 5rem;
+  align-content: center;
+  justify-content: space-between;
+  flex: 1;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+
+  &__search {
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1;
+      color: $dark-gray;
+
+      &__dark {
+        color: $white;
+      }
+    }
+
+    &__input {
+      width: 40rem;
+      padding: 2rem 5rem;
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0px 2px 6px 0.5px rgba(0, 0, 0, 0.1);
+      color: $dark-gray;
+
+      @media only screen and (max-width: $bp-small) {
+        width: 100%;
+      }
+
+      &__dark {
+        color: $white;
+        background-color: $dark-blue;
+
+        &::placeholder {
+          color: $white;
+        }
+      }
+
+      &::placeholder {
+        color: $dark-gray;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.selected {
+  position: relative;
+
+  &__btn {
+    position: relative;
+    width: 20rem;
+    border: none;
+    background-color: $white;
+    text-align: left;
+    padding: 2rem 2rem;
+    margin-bottom: 0.3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 6px 0.5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &__dark {
+      background-color: $dark-blue;
+      color: $white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    z-index: 12;
+
+    @media only screen and (max-width: $bp-small) {
+      top: 2.5rem;
+      left: 18rem;
+    }
+  }
+}
+
+.select {
+  position: relative;
+  &__list {
+    box-shadow: 0px 2px 6px 0.5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    transform-origin: top;
+    transition: transfrom 0.2s;
+    display: none;
+
+    &__drop {
+      display: block;
+      transform: scale(1, 1);
+      z-index: 20;
+    }
+
+    &__item {
+      list-style-type: none;
+      border-radius: 1rem;
+    }
+  }
+
+  &__btn {
+    width: 20rem;
+    border: none;
+    background-color: $white;
+    padding: 1rem 2rem;
+    text-align: left;
+    cursor: pointer;
+
+    &__dark {
+      background-color: $dark-blue;
+      color: $white;
+      width: 20rem;
+      border: none;
+      padding: 1rem 2rem;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-blue;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:hover {
+      background-color: $very-light-gray;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.pad {
+  padding-top: 2rem;
+}
+
+.pad2 {
+  padding-bottom: 2rem;
+}
