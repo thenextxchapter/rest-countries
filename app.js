@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const mongo = require("mongo");
-const MongoClient = mongo.MongoClient;
-const URI =
-  "mongodb+srv://Nony:redcarpet@cluster0.fe0md.mongodb.net/rest_countries?retryWrites=true&w=majority";
+// const mongo = require("mongo");
+// const MongoClient = mongo.MongoClient;
+// const URI =
+//   "mongodb+srv://Nony:redcarpet@cluster0.fe0md.mongodb.net/rest_countries?retryWrites=true&w=majority";
 // var client;
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -29,19 +29,19 @@ app.use(bodyParser.json());
 /** CORS Middleware */
 app.use(cors());
 
-var mongoClient = new MongoClient(URI, {
-  reconnectTries: Number.MAX_VALUE,
-  autoReconnect: true,
-  useNewUrlParser: true,
-});
-mongoClient.connect((err, db) => {
-  // returns db connection
-  if (err != null) {
-    console.log(err);
-    return;
-  }
-  client = db;
-});
+// var mongoClient = new MongoClient(URI, {
+//   reconnectTries: Number.MAX_VALUE,
+//   autoReconnect: true,
+//   useNewUrlParser: true,
+// });
+// mongoClient.connect((err, db) => {
+//   // returns db connection
+//   if (err != null) {
+//     console.log(err);
+//     return;
+//   }
+//   client = db;
+// });
 
 //  Apply Path Modules
 //  Setting up the static directory
