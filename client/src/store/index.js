@@ -65,13 +65,14 @@ export default new Vuex.Store({
       const response = await axios.get(
         // https://restcountries.com/v2/all?fields=name,capital,currencies
 
-        `https://restcountries.com/v2/all?fields=flag;name;population;region;capital;alpha3Code;`
+        `https://restcountries.com/v2/all?fields=flag,name,population,region,capital,alpha3Code;`
       );
       commit("countryData", response.data);
     },
     async fetchRegions({ commit }, region) {
       const response = await axios.get(
-        `https://restcountries.com/v2/region/${region}?fields=flag;name;population;region;capital;`
+        // `https://restcountries.com/v2/region/${region}?fields=flag;name;population;region;capital;`
+        `https://restcountries.com/v2/region/${region}?fields=flag,name,population,region,capital;`
       );
       commit("countryData", response.data);
     },

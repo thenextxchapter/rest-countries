@@ -91,13 +91,14 @@ export default {
     },
     async getCountry(details) {
       const response = await axios.get(
-        `https://restcountries.eu/rest/v2/name/${details}?fullText=true`
+        // https://restcountries.com/v2/all?fields=name,capital,currencies
+        `https://restcountries.com/v2/name/${details}?fullText=true`
       );
       this.country = response.data;
     },
     async getCode(details) {
       const response = await axios.get(
-        `https://restcountries.eu/rest/v2/alpha/${details}`
+        `https://restcountries.com/v2/alpha/${details}`
       );
       this.country = response.data;
     },
