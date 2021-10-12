@@ -72,7 +72,7 @@ export default new Vuex.Store({
     async fetchRegions({ commit }, region) {
       const response = await axios.get(
         // `https://restcountries.com/v2/region/${region}?fields=flag;name;population;region;capital;`
-        `https://restcountries.com/v2/region/${region}?fields=flag,name,population,region,capital;`
+        `https://restcountries.com/v3.1/region/${region}?fields=flag,name,population,region,capital;`
       );
       commit("countryData", response.data);
     },

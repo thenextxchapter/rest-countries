@@ -91,7 +91,6 @@ export default {
     },
     async getCountry(details) {
       const response = await axios.get(
-        // https://restcountries.com/v2/all?fields=name,capital,currencies
         `https://restcountries.com/v2/name/${details}?fullText=true`
       );
       this.country = response.data;

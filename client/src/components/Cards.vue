@@ -7,7 +7,7 @@
         :class="{ cards__dark: darkMode }"
         v-for="country in getPages"
         :key="country.name"
-        @click="goToDescription(country.alpha3Code)"
+        @click="goToDescription(country.cioc)"
       >
         <div
           class="cards__img"
