@@ -6,7 +6,7 @@
         class="cards"
         :class="{ cards__dark: darkMode }"
         v-for="country in getPages"
-        :key="country.name"
+        :key="country.name.common"
         @click="goToDescription(country.cioc)"
       >
         <div
@@ -15,7 +15,7 @@
         ></div>
         <!-- <img :src="country.flag" :alt="country.name" class="cards__img" /> -->
         <div class="cards__text" :class="{ cards__text__dark: darkMode }">
-          <h2 class="cards__heading">{{ country.name }}</h2>
+          <h2 class="cards__heading">{{ country.name.common }}</h2>
           <p class="cards__population">
             <strong>Population:</strong>
             {{ country.population.toLocaleString() }}

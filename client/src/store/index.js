@@ -65,7 +65,7 @@ export default new Vuex.Store({
       const response = await axios.get(
         // https://restcountries.com/v2/all?fields=name,capital,currencies
 
-        `https://restcountries.com/v2/all?fields=flag,name,population,region,capital,alpha3Code;`
+        `https://restcountries.com/v3.1/all?fields=flag,name,population,region,capital,cioc;`
       );
       commit("countryData", response.data);
     },

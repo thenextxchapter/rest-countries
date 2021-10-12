@@ -11,13 +11,13 @@
     </button>
     <div class="divide">
       <div class="divide__left">
-        <img :src="country.flag" :alt="country.name" class="img__left" />
+        <img :src="country.flag" :alt="country.name.common" class="img__left" />
       </div>
       <div class="divide__right">
-        <h2 class="country__name">{{ country.name }}</h2>
+        <h2 class="country__name">{{ country.name.common }}</h2>
         <div class="text">
           <p class="others">
-            <strong>Native Name:</strong> {{ country.nativeName }}
+            <strong>Offical Name:</strong> {{ country.nativeName }}
           </p>
           <p class="others">
             <strong>Population:</strong>
