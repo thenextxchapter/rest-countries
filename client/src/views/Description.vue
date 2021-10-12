@@ -11,7 +11,7 @@
     </button>
     <div class="divide">
       <div class="divide__left">
-        <img :src="country.flag" :alt="country.name.common" class="img__left" />
+        <img :src="country.flags.svg" :alt="country.name.common" class="img__left" />
       </div>
       <div class="divide__right">
         <h2 class="country__name">{{ country.name.common }}</h2>

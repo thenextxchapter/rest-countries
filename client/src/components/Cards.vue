@@ -11,7 +11,7 @@
       >
         <div
           class="cards__img"
-          :style="{ backgroundImage: `url(${country.flag})` }"
+          :style="{ backgroundImage: `url(${country.flags.svg})` }"
         ></div>
         <!-- <img :src="country.flag" :alt="country.name" class="cards__img" /> -->
         <div class="cards__text" :class="{ cards__text__dark: darkMode }">
@@ -24,7 +24,7 @@
             <strong>Region:</strong> {{ country.region }}
           </p>
           <p class="cards__population">
-            <strong>Capital:</strong> {{ country.capital }}
+            <strong>Capital:</strong> {{ country.capital[0] }}
           </p>
         </div>
       </div>
