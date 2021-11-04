@@ -11,45 +11,49 @@
     </button>
     <div class="divide">
       <div class="divide__left">
-        <img :src="country.flags.svg" :alt="country.name.common" class="img__left" />
+        <img
+          :src="country[0].flags.png"
+          :alt="country[0].name.common"
+          class="img__left"
+        />
       </div>
       <div class="divide__right">
-        <h2 class="country__name">{{ country.name.common }}</h2>
+        <h2 class="country__name">{{ country[0].name.common }}</h2>
         <div class="text">
           <p class="others">
-            <strong>Offical Name:</strong> {{ country.nativeName }}
+            <strong>Offical Name:</strong> {{ country[0].name.official }}
           </p>
           <p class="others">
             <strong>Population:</strong>
-            {{ country.population.toLocaleString() }}
+            {{ country[0].population.toLocaleString() }}
           </p>
-          <p class="others"><strong>Region:</strong> {{ country.region }}</p>
+          <p class="others"><strong>Region:</strong> {{ country[0].region }}</p>
           <p class="others">
-            <strong>Sub Region:</strong> {{ country.subregion }}
+            <strong>Sub Region:</strong> {{ country[0].subregion }}
           </p>
-          <p class="others"><strong>Capital:</strong> {{ country.capital }}</p>
+          <p class="others"><strong>Capital:</strong> {{ country[0].capital }}</p>
           <p class="others">
             <strong>Top Level Domain:</strong>
-            {{ country.topLevelDomain[0] }}
+            {{ country[0].topLevelDomain[0] }}
           </p>
           <p class="others">
             <strong>Currencies:</strong>
-            {{ country.currencies[0].name }},
-            {{ country.currencies[0].symbol }}
+            {{ country[0].currencies[0].name }},
+            {{ country[0].currencies[0].symbol }}
           </p>
           <p class="others">
-            <strong>Languages:</strong> {{ country.languages[0].name }}
+            <strong>Languages:</strong> {{ country[0].languages[0].name }}
           </p>
           <p class="others">
-            <strong>Calling Codes:</strong> +{{ country.callingCodes[0] }}
+            <strong>Calling Codes:</strong> +{{ country[0].callingCodes[0] }}
           </p>
         </div>
 
-        <div class="borders" v-if="country.borders[0]">
+        <div class="borders" v-if="country[0].borders[0]">
           <h4 class="border__text">Border Countries:</h4>
           <div>
             <button
-              v-for="btn in country.borders"
+              v-for="btn in country[0].borders"
               :key="btn"
               class="border__btn"
               :class="{ border__btn__dark: darkMode }"
@@ -75,14 +79,14 @@ export default {
     return {
       details: this.$route.query.country,
       country: [],
-      code: []
+      code: [],
     };
   },
   components: {
-    Heading
+    Heading,
   },
   computed: {
-    ...mapState(["darkMode"])
+    ...mapState(["darkMode"]),
   },
   methods: {
     ...mapActions(["searchFullCountry"]),
@@ -91,24 +95,24 @@ export default {
     },
     async getCountry(details) {
       const response = await axios.get(
-        `https://restcountries.com/v2/name/${details}?fullText=true`
+        `https://restcountries.com/v3.1/name/${details}?fullText=true`
       );
       this.country = response.data;
     },
     async getCode(details) {
       const response = await axios.get(
-        `https://restcountries.com/v2/alpha/${details}`
+        `https://restcountries.com/v3.1/alpha/${details}`
       );
       this.country = response.data;
     },
     goToCountry(country) {
       this.$router.push({ name: "Description", query: { country } });
       this.getCode(country);
-    }
+    },
   },
   created() {
     this.getCode(this.details);
-  }
+  },
 };
 </script>
 

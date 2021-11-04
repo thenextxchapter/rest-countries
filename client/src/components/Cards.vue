@@ -6,25 +6,25 @@
         class="cards"
         :class="{ cards__dark: darkMode }"
         v-for="country in getPages"
-        :key="country.name.common"
-        @click="goToDescription(country.cioc)"
+        :key="country[0].name.common"
+        @click="goToDescription(country[0].cioc)"
       >
         <div
           class="cards__img"
-          :style="{ backgroundImage: `url(${country.flags.svg})` }"
+          :style="{ backgroundImage: `url(${country[0].flags.png})` }"
         ></div>
         <!-- <img :src="country.flag" :alt="country.name" class="cards__img" /> -->
         <div class="cards__text" :class="{ cards__text__dark: darkMode }">
-          <h2 class="cards__heading">{{ country.name.common }}</h2>
+          <h2 class="cards__heading">{{ country[0].name.common }}</h2>
           <p class="cards__population">
             <strong>Population:</strong>
-            {{ country.population.toLocaleString() }}
+            {{ country[0].population.toLocaleString() }}
           </p>
           <p class="cards__population">
-            <strong>Region:</strong> {{ country.region }}
+            <strong>Region:</strong> {{ country[0].region }}
           </p>
           <p class="cards__population">
-            <strong>Capital:</strong> {{ country.capital[0] }}
+            <strong>Capital:</strong> {{ country[0].capital[0] }}
           </p>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default {
   name: "Cards",
   data() {
     return {
-      img: "country.flag",
+      img: "country[0].flag",
       curPage: 1,
       resPerPage: 12
     };

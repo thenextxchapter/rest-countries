@@ -78,13 +78,13 @@ export default new Vuex.Store({
     },
     async searchCountry({ commit }, input) {
       const response = await axios.get(
-        `https://restcountries.com/v2/name/${input}`
+        `https://restcountries.com/v3.1/name/${input}`
       );
       commit("countryData", response.data);
     },
     async searchFullCountry({ commit }, input) {
       const response = await axios.get(
-        `https://restcountries.com/v2/name/${input}?fullText=true`
+        `https://restcountries.com/v3.1/name/${input}?fullText=true`
       );
       commit("country", response.data);
     },
