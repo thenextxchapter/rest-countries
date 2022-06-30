@@ -6,25 +6,25 @@
         class="cards"
         :class="{ cards__dark: darkMode }"
         v-for="country in getPages"
-        :key="country[0].name.common"
-        @click="goToDescription(country[0].cioc)"
+        :key="country.name"
+        @click="goToDescription(country.alpha3Code)"
       >
         <div
           class="cards__img"
-          :style="{ backgroundImage: `url(${country[0].flags.png})` }"
+          :style="{ backgroundImage: `url(${country.flag})` }"
         ></div>
         <!-- <img :src="country.flag" :alt="country.name" class="cards__img" /> -->
         <div class="cards__text" :class="{ cards__text__dark: darkMode }">
-          <h2 class="cards__heading">{{ country[0].name.common }}</h2>
+          <h2 class="cards__heading">{{ country.name }}</h2>
           <p class="cards__population">
             <strong>Population:</strong>
-            {{ country[0].population.toLocaleString() }}
+            {{ country.population.toLocaleString() }}
           </p>
           <p class="cards__population">
-            <strong>Region:</strong> {{ country[0].region }}
+            <strong>Region:</strong> {{ country.region }}
           </p>
           <p class="cards__population">
-            <strong>Capital:</strong> {{ country[0].capital[0] }}
+            <strong>Capital:</strong> {{ country.capital }}
           </p>
         </div>
       </div>

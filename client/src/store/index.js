@@ -63,28 +63,30 @@ export default new Vuex.Store({
     },
     async fetchCountryData({ commit }) {
       const response = await axios.get(
-        // https://restcountries.com/v2/all?fields=name,capital,currencies
+        `https://restcountries.com/v2/all?fields=name,capital,currencies,flag,alpha3Code,population,region`
 
-        `https://restcountries.com/v3.1/all?fields=flag,name,population,region,capital,cioc;`
+        // `https://restcountries.com/v3.1/all?fields=flag,name,population,region,capital,cioc;`
       );
       commit("countryData", response.data);
     },
     async fetchRegions({ commit }, region) {
       const response = await axios.get(
-        // `https://restcountries.com/v2/region/${region}?fields=flag;name;population;region;capital;`
-        `https://restcountries.com/v3.1/region/${region}?fields=flag,name,population,region,capital;`
+        `https://restcountries.com/v2/region/${region}?fields=flag,name,population,region,capital` 
+        // `https://restcountries.com/v3.1/region/${region}?fields=flag,name,population,region,capital;`
       );
       commit("countryData", response.data);
     },
     async searchCountry({ commit }, input) {
       const response = await axios.get(
-        `https://restcountries.com/v3.1/name/${input}`
+        // `https://restcountries.com/v3.1/name/${input}`
+        `https://restcountries.com/v2/name/${input}`
       );
       commit("countryData", response.data);
     },
     async searchFullCountry({ commit }, input) {
       const response = await axios.get(
-        `https://restcountries.com/v3.1/name/${input}?fullText=true`
+        // `https://restcountries.com/v3.1/name/${input}?fullText=true`
+        `https://restcountries.com/v2/name/${input}?fullText=true`
       );
       commit("country", response.data);
     },
